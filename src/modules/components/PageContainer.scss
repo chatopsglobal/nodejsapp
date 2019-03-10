@@ -1,0 +1,28 @@
+.help {
+    padding: 20px;
+    background: #fff;
+    border: 1px solid #eee;
+    color: #666;
+    malign: 10px;
+
+    // Will be rendered as .help__caption
+    &__caption {
+        margin-top: 20px;
+        padding: 20px;
+        background: #002859;
+        color: #fff;
+    }
+
+    // Will be rendered as .help--modifier
+    &--modifier {
+        border: 1px solid #eee;
+        background: #ebebeb;
+    }
+
+    // Will be rendered as .help--modifier help__caption
+    &--modifier &__caption {
+        color: #666;
+        border: 1px solid #666;
+        background: #fff;;
+    }
+}

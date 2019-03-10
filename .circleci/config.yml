@@ -1,0 +1,33 @@
+version: 2
+jobs:
+  build-deploy-job:
+    docker:
+      - image: circleci/node:9.11-browsers
+      
+    working_directory: ~/spd-web-app/
+    steps:
+      - checkout
+      - run: npm -v
+      - run: node -v
+      - run: npm config set registry https://registry.npmjs.org/
+      - run: npm install
+      - run: ls -ltr
+      #- run: chmod +x runNPMtest.sh
+      #- run: ./runNPMtest.sh 'npm run test:update'
+      - run: npm run build:dev
+      #- run: sudo apt-get -y -qq install awscli
+      #- run: aws configure set default.s3.signature_version s3v4
+      #- run: aws s3api get-bucket-location --bucket sears-app
+      #- run:
+      #    name: Deploy to S3 if tests pass and branch is Master
+      #    command: aws --region ap-south-1 s3 sync ~/spd-web-app/dist s3://sears-app --delete
+      #- run: sudo npm install -g lighthouse
+      #- run: lighthouse --help
+      #- run: google-chrome --version
+      #- run: lighthouse http://sears-app.s3-website.ap-south-1.amazonaws.com/
+      #- run: aws --region ap-south-1 s3 cp ~/spd-web-app/*report.html s3://sears-app
+workflows:
+  version: 2
+  build-deploy:
+    jobs:
+      - build-deploy-job

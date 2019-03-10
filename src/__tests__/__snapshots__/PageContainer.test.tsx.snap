@@ -1,0 +1,42 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Page container component should render snapshot 1`] = `
+Array [
+  <div>
+    <a
+      href="#/help"
+      onClick={[Function]}
+    >
+      Help
+    </a>
+    <br />
+    <a
+      href="#/parts/123"
+      onClick={[Function]}
+    >
+      Parts
+    </a>
+    <br />
+    <div
+      className="jumbotron"
+    >
+      <div />
+    </div>
+  </div>,
+  <button
+    onClick={[Function]}
+  >
+    Redux Sample
+  </button>,
+  <div
+    className="jumbotron"
+  >
+    <h3>
+      Graphql Sample inetgration results --Listing all parts for the model 9030 
+    </h3>
+    <p>
+      Loading...
+    </p>
+  </div>,
+]
+`;
